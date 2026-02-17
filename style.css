@@ -99,9 +99,27 @@ h4 {
 /* Navbar */
 
 /* Glass Navbar Styling */
+.navbar {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    padding: 15px 20px;
+    width: 100%;
+}
+
+
+.mobile-menu-btn {
+    display: block; 
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
 .glass-navbar {
     position: absolute;
-    top: 15px; /* മുകളിൽ നിന്ന് കുറച്ച് ഗ്യാപ്പ് ഇടുമ്പോൾ നല്ലൊരു പ്രീമിയം ലുക്ക് കിട്ടും */
+    
+    top: 15px; 
     padding-bottom: 20px;
     left: 50%;
     transform: translateX(-50%);
@@ -800,7 +818,7 @@ h4 {
 /* Footer */
 footer {
     margin-top: 80px;
-    padding: 60px 0 20px;
+    padding: 60px 20px 20px;
     border-top: 1px solid rgba(255, 255, 255, 0.05);
 }
 

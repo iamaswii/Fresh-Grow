@@ -236,7 +236,7 @@ h1, h2, h3, h4 {
 }
 
 .feature-card {
-    padding-left: 50px;
+    padding: 50px;
     display: flex;
     align-items: center;
     gap: 50px;
@@ -244,7 +244,7 @@ h1, h2, h3, h4 {
     margin: 0 auto;
 }
 .featured-list{
-    padding-left: 48px;
+    padding: 20px;
 }
 
 .ceo-info h3{

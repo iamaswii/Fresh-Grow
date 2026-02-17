@@ -401,10 +401,10 @@ h1, h2, h3, h4 {
         height: 60px;
     }
 } 
-
+/* 
 .featured-list{
    padding: 20px;
-}
+} */
 
 
 html, body {
@@ -417,6 +417,6 @@ html, body {
     padding-right: 60px;
 }
  
-.hero h2{
+/* .hero h2{
     padding: 20px;
-}
+} */

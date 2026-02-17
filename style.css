@@ -137,19 +137,19 @@ h1, h2, h3, h4 {
 
 /* --- Hero Section --- */
 .hero {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    align-items: center;
+    /* display: grid; */
+    /* grid-template-columns: 1fr 1fr; */
+    /* align-items: center; */
     padding: 150px 0 70px; 
     min-height: 80vh;
 }
 .hero-content h1 {
     font-size: 2.5rem;
     line-height: 1.2;
-    padding-right: 60px;
     margin-bottom: 20px;
 
 }
+
 
 .hero-content p {
     color: var(--text-muted);

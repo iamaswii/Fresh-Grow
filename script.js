@@ -94,18 +94,3 @@ if (kadalaCard) {
 
 
 
-// Sticky Navbar Background on Scroll
-const header = document.querySelector('.navbar');
-window.addEventListener('scroll', () => {
-    if (window.scrollY > 50) {
-        header.style.background = 'rgba(13, 13, 13, 0.9)';
-        header.style.backdropFilter = 'blur(10px)';
-        header.style.boxShadow = '0 5px 20px rgba(0,0,0,0.5)';
-        header.style.padding = '10px 0';
-    } else {
-        header.style.background = 'transparent';
-        header.style.backdropFilter = 'none';
-        header.style.boxShadow = 'none';
-        header.style.padding = '20px 0';
-    }
-});

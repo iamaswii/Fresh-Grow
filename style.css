@@ -97,6 +97,127 @@ h4 {
 }
 
 /* Navbar */
+
+/* Glass Navbar Styling */
+.glass-navbar {
+    position: absolute;
+    top: 15px; /* മുകളിൽ നിന്ന് കുറച്ച് ഗ്യാപ്പ് ഇടുമ്പോൾ നല്ലൊരു പ്രീമിയം ലുക്ക് കിട്ടും */
+    padding-bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 70%;
+    max-width: 1200px;
+    z-index: 1000;
+    
+    /* Glass Effect */
+    background: rgba(255, 255, 255, 0.05); 
+    backdrop-filter: blur(15px); 
+    -webkit-backdrop-filter: blur(15px);
+    
+    border: 1px solid rgba(255, 255, 255, 0.1); 
+    border-radius: 50px; /* പിൽ ഷേപ്പ് ലുക്ക് */
+    padding: 10px 25px;
+    transition: all 0.4s ease;
+}
+
+/* സ്ക്രോൾ ചെയ്യുമ്പോൾ നവ്ബാർ ചെറുതാകാൻ (Optional) */
+.glass-navbar.scrolled {
+    top: 0;
+    width: 100%;
+    border-radius: 0;
+    background: rgba(0, 0, 0, 0.8);
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Logo Section */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #fff;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.logo img {
+    height: 35px;
+    width: auto;
+}
+
+/* Navigation Links */
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 25px;
+}
+
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    transition: 0.3s;
+    opacity: 0.8;
+}
+
+.nav-links a:hover {
+    color: #ffeb3b; /* മഞ്ഞ നിറത്തിലുള്ള ഹോവർ ഇഫക്ട് */
+    opacity: 1;
+}
+
+/* Nav Actions (Cart & Mobile Button) */
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.cart-icon {
+    text-decoration: none;
+    color: #fff;
+    position: relative;
+    font-size: 1.2rem;
+}
+
+.cart-count {
+    position: absolute;
+    top: -8px;
+    right: -10px;
+    background: #ff4757;
+    color: #fff;
+    font-size: 10px;
+    padding: 2px 6px;
+    border-radius: 50%;
+}
+
+.mobile-menu-btn {
+    display: none; /* ഡെസ്ക്ടോപ്പിൽ ഹൈഡ് ചെയ്യാൻ */
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none; /* മൊബൈലിൽ മെനു ഹൈഡ് ചെയ്യാൻ - JS വഴി ഇത് ടോഗിൾ ചെയ്യാം */
+    }
+    .mobile-menu-btn {
+        display: block;
+    }
+}
+
+
+
+
+
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -586,9 +707,9 @@ h4 {
 /* CEO Section Layout */
 .ceo-section {
     display: flex;
-    justify-content: center; /* തിരശ്ചീനമായി സെന്റർ ആക്കാൻ */
-    align-items: center; /* ലംബമായി സെന്റർ ആക്കാൻ */
-    padding: 80px 20px;
+    justify-content: center; 
+    align-items: center; 
+    /* padding: 80px 20px; */
     background: transparent;
 }
 
@@ -600,20 +721,24 @@ h4 {
     -webkit-backdrop-filter: blur(15px);
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 30px;
-    padding: 40px 30px;
+    padding: 30px 20px;
     text-align: center;
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
 }
 
 /* CEO Photo Style */
 .ceo-image img {
+   
     width: 200px;
     height: 200px;
-    border-radius: 30%; /* റൗണ്ട് ആക്കാൻ */
+    border-radius: 20%;
     object-fit: cover;
-    border: 3px solid #ffeb3b; /* മഞ്ഞ ബോർഡർ */
+    border: 3px solid #09852a; 
     margin-bottom: 20px;
     box-shadow: 0 0 20px rgba(255, 235, 59, 0.3);
+}
+.ceo-image{
+    padding-left: 53px;
 }
 
 .ceo-tag {
@@ -720,6 +845,74 @@ footer {
     font-size: 0.8rem;
     padding-top: 20px;
     border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+/* Glass Footer Styling */
+.glass-footer {
+    background: rgba(255, 255, 255, 0.03); /* വളരെ കുറഞ്ഞ ട്രാൻസ്പരൻസി */
+    backdrop-filter: blur(15px); /* ഗ്ലാസ് ബ്ലർ ഇഫക്ട് */
+    -webkit-backdrop-filter: blur(15px);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 60px 20px 20px;
+    margin-top: 50px;
+    color: #fff;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+}
+
+.footer-col h3, .footer-col h4 {
+    color: #ffeb3b; /* മഞ്ഞ കളർ ഹെഡിംഗിന് */
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+}
+
+.footer-col p {
+    font-size: 14px;
+    line-height: 1.6;
+    opacity: 0.8;
+}
+
+.footer-col ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-col ul li {
+    margin-bottom: 12px;
+}
+
+.footer-col ul li a {
+    color: #fff;
+    text-decoration: none;
+    transition: 0.3s;
+    opacity: 0.7;
+}
+
+.footer-col ul li a:hover {
+    color: #ffeb3b;
+    opacity: 1;
+    padding-left: 5px;
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    font-size: 12px;
+    opacity: 0.6;
+}
+
+/* Mobile responsive adjustments */
+@media (max-width: 768px) {
+    .footer-container {
+        text-align: center;
+    }
 }
 
 /* Responsive */

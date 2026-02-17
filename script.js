@@ -1,96 +1,102 @@
-// Mobile Menu Toggle
-const mobileBtn = document.querySelector('.mobile-menu-btn');
-const navLinks = document.querySelector('.nav-links');
-
-mobileBtn.addEventListener('click', () => {
-    navLinks.classList.toggle('active');
-    
-    // Animate icon
-    const icon = mobileBtn.querySelector('i');
-    if (navLinks.classList.contains('active')) {
-        icon.classList.remove('fa-bars');
-        icon.classList.add('fa-xmark');
+/* --- 1. Navbar Scroll Effect --- */
+window.addEventListener('scroll', function() {
+    const navbar = document.querySelector('.glass-navbar');
+    if (window.scrollY > 50) {
+        navbar.classList.add('scrolled');
     } else {
-        icon.classList.remove('fa-xmark');
-        icon.classList.add('fa-bars');
+        navbar.classList.remove('scrolled');
     }
 });
 
-// Menu Filtering
-const filterBtns = document.querySelectorAll('.filter-btn');
-const menuItems = document.querySelectorAll('.menu-item');
+/* --- 2. Mobile Menu Toggle --- */
+const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+const navLinks = document.querySelector('.nav-links');
 
-filterBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-        // Remove active class from all buttons
-        filterBtns.forEach(b => b.classList.remove('active'));
-        // Add active class to clicked button
-        btn.classList.add('active');
-        
-        const filterValue = btn.getAttribute('data-filter');
-        
-        menuItems.forEach(item => {
-            if (filterValue === 'all' || item.getAttribute('data-category') === filterValue) {
-                item.style.display = 'flex';
-                // Add fade in animation
-                item.style.opacity = '0';
-                setTimeout(() => {
-                    item.style.opacity = '1';
-                }, 50);
-            } else {
-                item.style.display = 'none';
-            }
-        });
+if (mobileMenuBtn) {
+    mobileMenuBtn.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
     });
-});
+}
 
-// Scroll Reveal Animation
-const revealElements = document.querySelectorAll('.glass-card, .hero-content, .section-header, .discount-card');
+/* --- 3. Star Rating Interaction --- */
+const stars = document.querySelectorAll('.stars-input i');
+let selectedRating = 0;
 
-const revealObserver = new IntersectionObserver((entries, observer) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('active');
-            observer.unobserve(entry.target); // Reveal only once
+stars.forEach(star => {
+    star.addEventListener('mouseover', function() {
+        resetStars();
+        const rating = this.getAttribute('data-rating');
+        highlightStars(rating);
+    });
+
+    star.addEventListener('mouseout', function() {
+        resetStars();
+        if (selectedRating > 0) {
+            highlightStars(selectedRating);
         }
     });
-}, {
-    root: null,
-    threshold: 0.15, // Trigger when 15% visible
+
+    star.addEventListener('click', function() {
+        selectedRating = this.getAttribute('data-rating');
+        highlightStars(selectedRating);
+    });
 });
 
-revealElements.forEach(el => {
-    el.classList.add('reveal-element');
-    revealObserver.observe(el);
+function highlightStars(rating) {
+    stars.forEach(s => {
+        if (s.getAttribute('data-rating') <= rating) {
+            s.classList.replace('far', 'fas'); 
+        }
+    });
+}
+
+function resetStars() {
+    stars.forEach(s => {
+        s.classList.replace('fas', 'far'); 
+    });
+}
+
+/* --- 4. Review Form Submission to Google --- */
+const reviewForm = document.getElementById('review-form');
+
+if (reviewForm) {
+    reviewForm.addEventListener('submit', function(e) {
+        e.preventDefault(); 
+        
+        const googleReviewURL = "https://g.page/r/YOUR_LINK_HERE/review"; 
+
+        if (selectedRating === 0) {
+            alert("Please select a star rating!");
+            return;
+        }
+
+        const name = this.querySelector('input').value;
+        alert(`Thank you ${name}! Redirecting you to our Google Review page to finalize your feedback.`);
+        
+        window.open(googleReviewURL, '_blank'); 
+        
+        this.reset();
+        selectedRating = 0;
+        resetStars();
+    });
+}
+
+/* --- 5. Amazon Links for Menu Cards  --- */
+const cards = document.querySelectorAll('.feature-card');
+
+
+const amazonLinks = [
+    "https://www.amazon.in/dp/B0DYC8P4QC", // Meat Masala Link
+    "https://www.amazon.in/dp/B0DZT5QC71", // Sambar Paste Link
+    "https://www.amazon.in/dp/B0DZ2ZDH6G"  // Kadala Curry Link
+];
+
+cards.forEach((card, index) => {
+    card.style.cursor = 'pointer'; 
+    card.addEventListener('click', () => {
+        const link = amazonLinks[index];
+        if (link) {
+            window.open(link, '_blank'); 
+        }
+    });
 });
-
-// --- Amazon Product Links ---
-
-// 1. Meat Masala Card
-const meatCard = document.querySelector('.feature-card.glass-card:nth-child(1)');
-if (meatCard) {
-    meatCard.style.cursor = 'pointer';
-    meatCard.addEventListener('click', () => {
-        window.open('https://www.amazon.in/dp/B0DYC8P4QC', '_blank');
-    });
-}
-// 2. sambar card
-const sambarCard = document.querySelector('.feature-card.glass-card:nth-child(2)'); 
-if (sambarCard) {
-    sambarCard.style.cursor = 'pointer';
-    sambarCard.addEventListener('click', () => {
-        window.open('https://www.amazon.in/dp/B0DZT5QC71', '_blank');
-    });
-}
-
-// 3.kadala card
-const kadalaCard = document.querySelector('.feature-card.glass-card:nth-child(3)');
-if (kadalaCard) {
-    kadalaCard.style.cursor = 'pointer';
-    kadalaCard.addEventListener('click', () => {
-        window.open('https://www.amazon.in/dp/B0DZ2ZDH6G', '_blank'); 
-    });
-}
-
-
-

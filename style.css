@@ -178,7 +178,6 @@ h1, h2, h3, h4 {
 .hero-img {
     width: 300px;
     height: 300px;
-    padding: 30px;
   
     object-fit: cover;
     border-radius: 50%;
@@ -402,10 +401,10 @@ h1, h2, h3, h4 {
         height: 60px;
     }
 } 
-/* 
+
 .featured-list{
    padding: 20px;
-} */
+}
 
 
 html, body {

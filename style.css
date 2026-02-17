@@ -398,38 +398,60 @@ h1, h2, h3, h4 {
  /* പഴയ മൊബൈൽ കോഡുകൾക്ക് പകരം ഇത് മാത്രം നൽകുക */
 
 /* 1. സ്ക്രീൻ അങ്ങോട്ടും ഇങ്ങോട്ടും നീങ്ങുന്നത് തടയാൻ */
+/* 1. സ്ക്രീൻ മൊത്തമായി ലോക്ക് ചെയ്യാൻ */
 html, body {
     overflow-x: hidden !important;
     width: 100% !important;
     margin: 0 !important;
     padding: 0 !important;
+    position: relative;
 }
 
 @media (max-width: 768px) {
-    /* 2. ഹീറോ സെക്ഷനിലെ ടെക്സ്റ്റ് സ്ക്രീനിൽ ഒതുക്കാൻ */
+    /* 2. ഹീറോ സെക്ഷൻ മൊത്തമായി ഒതുക്കാൻ */
+    .hero {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        text-align: center !important;
+        padding: 100px 15px 40px !important;
+        width: 100% !important;
+        overflow: hidden !important; /* ഇതിനുള്ളിലെ ഒന്നും പുറത്തേക്ക് പോകില്ല */
+    }
+
     .hero-content h1 {
         font-size: 2rem !important;
         line-height: 1.2 !important;
-        text-align: center !important;
         word-wrap: break-word !important;
-        padding: 0 10px !important;
     }
 
-    /* 3. കാർഡുകൾ കൃത്യമായി നടുവിൽ (Center) വരാൻ */
+    /* 3. ചിത്രങ്ങൾ സ്ക്രീൻ തള്ളുന്നത് തടയാൻ */
+    .hero-visual, .main-dish-circle {
+        width: 100% !important;
+        max-width: 300px !important; /* മൊബൈലിൽ വലിപ്പം കുറച്ചു */
+        height: auto !important;
+        margin: 20px auto !important;
+    }
+
+    .hero-img {
+        width: 250px !important;
+        height: 250px !important;
+        margin: 0 auto !important;
+    }
+
+    /* 4. കാർഡുകൾ സെന്ററിൽ വരാൻ */
     .menu-grid {
         display: flex !important;
-        flex-direction: column !important; /* ഒന്നിനു താഴെ ഒന്നായി വരാൻ */
-        align-items: center !important;    /* സെന്ററിൽ വരാൻ */
+        flex-direction: column !important;
+        align-items: center !important;
         justify-content: center !important;
         width: 100% !important;
-        padding: 20px 0 !important;
         margin: 0 auto !important;
     }
 
     .testimonial-card, .review-form-card {
-        width: 90% !important; /* സ്ക്രീനിന്റെ 90% വീതി എടുക്കും */
+        width: 90% !important;
         max-width: 350px !important;
-        margin: 10px auto !important; /* വശങ്ങളിൽ ഒരേപോലെ ഗ്യാപ്പ് നൽകി നടുവിൽ നിർത്തും */
-        flex: none !important;
+        margin: 10px auto !important;
     }
 }

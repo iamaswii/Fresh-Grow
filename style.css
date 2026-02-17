@@ -354,7 +354,7 @@ h1, h2, h3, h4 {
 }
 
 /* --- Responsive --- */
-  @media (max-width: 992px) {
+ @media (max-width: 992px) {
     .hero { grid-template-columns: 1fr; text-align: center; }
     .hero-visual { margin-top: 40px; }
     .feature-card, .feature-card.reverse { flex-direction: column; text-align: center; }
@@ -390,8 +390,6 @@ h1, h2, h3, h4 {
     }
 } 
 
+
+
  
-
-
-
-

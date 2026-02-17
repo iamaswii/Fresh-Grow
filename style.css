@@ -160,6 +160,7 @@ h1, h2, h3, h4 {
     position: relative;
     display: flex;
     justify-content: center;
+  ;
 }
 
 .main-dish-circle {
@@ -173,8 +174,9 @@ h1, h2, h3, h4 {
 }
 
 .hero-img {
-    width: 350px;
-    height: 350px;
+    width: 250px;
+    height: 250px;
+  
     object-fit: cover;
     border-radius: 50%;
     animation: float 6s ease-in-out infinite;
@@ -232,12 +234,20 @@ h1, h2, h3, h4 {
 }
 
 .feature-card {
+    padding-left: 50px;
     display: flex;
     align-items: center;
-    gap: 40px;
+    gap: 50px;
     max-width: 900px;
     margin: 0 auto;
 }
+.featured-list{
+    padding-left: 48px;
+}
+.testimonials-grid-layout{
+    padding-left: 50px;
+}
+
 
 .feature-card.reverse { flex-direction: row-reverse; }
 

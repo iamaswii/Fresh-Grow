@@ -402,9 +402,9 @@ h1, h2, h3, h4 {
     }
 } 
 
-.featured-list{
+/* .featured-list{
    padding: 20px;
-}
+} */
 
 
 html, body {
@@ -415,5 +415,8 @@ html, body {
 
 .hero-content{
     padding-right: 50px;
+}
+.hero-content h1{
+    padding-left: 20px;
 }
  

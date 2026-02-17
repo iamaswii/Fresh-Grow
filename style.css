@@ -247,7 +247,9 @@ h1, h2, h3, h4 {
 .testimonials-grid-layout{
     padding-left: 50px;
 }
-
+.ceo-info h3{
+    color: #ff9f1c;
+}
 
 .feature-card.reverse { flex-direction: row-reverse; }
 

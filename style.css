@@ -395,50 +395,41 @@ h1, h2, h3, h4 {
 
 
 
- @media (max-width: 992px) {
-    .hero { grid-template-columns: 1fr; text-align: center; }
-    .hero-visual { margin-top: 40px; }
-    .feature-card, .feature-card.reverse { flex-direction: column; text-align: center; }
+ /* പഴയ മൊബൈൽ കോഡുകൾക്ക് പകരം ഇത് മാത്രം നൽകുക */
+
+/* 1. സ്ക്രീൻ അങ്ങോട്ടും ഇങ്ങോട്ടും നീങ്ങുന്നത് തടയാൻ */
+html, body {
+    overflow-x: hidden !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
 }
 
-/* ഈ ഭാഗത്താണ് മാറ്റം വരുത്തിയത് */
 @media (max-width: 768px) {
-    .nav-links { display: none; }
-    .mobile-menu-btn { display: block; }
-
-    /* ഹെഡിംഗ് സ്ക്രീനിന് പുറത്തേക്ക് പോകാതിരിക്കാൻ */
+    /* 2. ഹീറോ സെക്ഷനിലെ ടെക്സ്റ്റ് സ്ക്രീനിൽ ഒതുക്കാൻ */
     .hero-content h1 {
-        font-size: 2.2rem !important; 
+        font-size: 2rem !important;
         line-height: 1.2 !important;
+        text-align: center !important;
         word-wrap: break-word !important;
-        padding: 0 10px;
+        padding: 0 10px !important;
     }
 
-    /* സൈഡിലേക്കുള്ള നീക്കം ഒഴിവാക്കാൻ */
-    body {
-        overflow-x: hidden !important;
-    }
-
+    /* 3. കാർഡുകൾ കൃത്യമായി നടുവിൽ (Center) വരാൻ */
     .menu-grid {
-        display: flex;
-        flex-direction: column;
-        align-items: center; 
-        gap: 20px;
+        display: flex !important;
+        flex-direction: column !important; /* ഒന്നിനു താഴെ ഒന്നായി വരാൻ */
+        align-items: center !important;    /* സെന്ററിൽ വരാൻ */
+        justify-content: center !important;
+        width: 100% !important;
+        padding: 20px 0 !important;
+        margin: 0 auto !important;
     }
 
-    .testimonial-card {
-        width: 90% !important; 
-        max-width: 320px; 
-        margin: 0 auto;
-        padding: 20px;
+    .testimonial-card, .review-form-card {
+        width: 90% !important; /* സ്ക്രീനിന്റെ 90% വീതി എടുക്കും */
+        max-width: 350px !important;
+        margin: 10px auto !important; /* വശങ്ങളിൽ ഒരേപോലെ ഗ്യാപ്പ് നൽകി നടുവിൽ നിർത്തും */
+        flex: none !important;
     }
-    
-    .user-img {
-        width: 60px; 
-        height: 60px;
-    }
-}
-
-.footer-col a {
-    color: #ffffff;
 }

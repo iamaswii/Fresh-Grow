@@ -160,7 +160,8 @@ h1, h2, h3, h4 {
     position: relative;
     display: flex;
     justify-content: center;
-  ;
+  
+  
 }
 
 .main-dish-circle {
@@ -171,6 +172,7 @@ h1, h2, h3, h4 {
     display: flex;
     justify-content: center;
     align-items: center;
+    
 }
 
 .hero-img {
@@ -400,6 +402,18 @@ h1, h2, h3, h4 {
     }
 } 
 
+.featured-list{
+    padding-right: 40px;
+}
 
 
+html, body {
+    max-width: 100%;
+    overflow-x: hidden; 
+    position: relative;
+}
+
+.hero-content{
+    padding-right: 60px;
+}
  

@@ -188,16 +188,32 @@ h1, h2, h3, h4 {
 .floating-item {
     position: absolute;
     width: 60px;
+    height: auto;
+    filter: drop-shadow(0 10px 10px rgba(0,0,0,0.5));
     z-index: 11;
+
 }
 
 .tomato { top: 30px; right: 50px; animation: float 7s infinite; }
 .leaf-1 { bottom: 50px; left: 20px; animation: float 5s infinite; }
 .pepper { top: 40%; left: -20px; width: 70px; animation: float 8s infinite; }
 
-@keyframes float {
+/* @keyframes float {
     0%, 100% { transform: translateY(0px) rotate(0deg); }
     50% { transform: translateY(-20px) rotate(5deg); }
+} */
+ @keyframes float {
+    0% {
+        transform: translateY(0px) rotate(0deg);
+    }
+
+    50% {
+        transform: translateY(-20px) rotate(5deg);
+    }
+
+    100% {
+        transform: translateY(0px) rotate(0deg);
+    }
 }
 
 /* --- Section Divider --- */

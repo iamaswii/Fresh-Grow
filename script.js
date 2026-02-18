@@ -63,7 +63,7 @@ if (reviewForm) {
     reviewForm.addEventListener('submit', function(e) {
         e.preventDefault(); 
         
-        const googleReviewURL = "https://g.page/r/YOUR_LINK_HERE/review"; 
+        const googleReviewURL = "fresh grow kozhikode reviews https://share.google/YXOycbaUVQBJNUSJm"; 
 
         if (selectedRating === 0) {
             alert("Please select a star rating!");
@@ -99,4 +99,5 @@ cards.forEach((card, index) => {
             window.open(link, '_blank'); 
         }
     });
+   
 });
